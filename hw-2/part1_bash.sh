@@ -27,7 +27,7 @@ do
   if [ "$currentlinePosition" == "$numberOfLines" ]; then
     # have to sort within this while loop (instead of after) since file i/o is async
     # and instructions after the while loop will evaluate before the file i/o is complete
-    sortedOutput=$(printf "$unsortedOutput" | sort -n)
+    sortedOutput=$(printf "$unsortedOutput" | sort -k3)
     echo "$sortedOutput"
   fi
 
