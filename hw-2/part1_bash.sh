@@ -1,5 +1,7 @@
 #! /bin/bash
 
+# Krish Dholakiya and Michael Merola
+
 filename="$1"
 numberOfLines=`wc -l < $filename`
 numberOfLines=$(expr $numberOfLines + 0)
@@ -22,7 +24,7 @@ do
   let average=($scoreOne+$scoreTwo+$scoreThree)/3
   unsortedOutput+=`echo "$average [$studentID] $lastName, $firstName\n"`
 
-  if [ "$currentlinePosition" == "$numberOfLines" ]; then 
+  if [ "$currentlinePosition" == "$numberOfLines" ]; then
     # have to sort within this while loop (instead of after) since file i/o is async
     # and instructions after the while loop will evaluate before the file i/o is complete
     sortedOutput=$(printf "$unsortedOutput" | sort -n)
@@ -32,4 +34,3 @@ do
   let currentlinePosition+=1
 
 done
-
