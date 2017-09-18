@@ -1,0 +1,26 @@
+#! /bin/bash
+
+diff fruitsOld.txt fruitsNew.txt
+
+wc -l testPasswd.txt; wc -m testPasswd.txt;
+
+cut -d ':' -f 1 testPasswd.txt; cut -d ' ' -f 2,4 grades.txt;
+
+cut -d ':' -f 4 testPasswd.txt | sort -n | uniq |> ~/filename.txt;
+ 
+sed 's/[a-zA-Z]//g' leetSpeak.txt; sed 's/[0-9]//g' leetSpeak.txt; sed 's/[0-9]/_/g' leetSpeak.txt;
+
+sed 's/0/o/g' leetSpeak.txt | sed 's/4/a/g' | sed 's/5/s/g' | sed 's/3/e/g' | sed 's/7/t/g' | sed 's/1/i/g';
+
+awk -F ' ' '{print $1 " " $2 " " ($3+$4+$5+$6)/4}' grades.txt;
+
+awk -F ' ' '{print $1 " " $2 " " ($3+$4+$5+$6)/4}' grades.txt | awk -F ' ' '{ if (NR != 1) { sum += $3 } } END { print sum/6 }';
+
+grep '[0-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]' regex_practice_data.txt | wc -l;
+
+grep '303-441-[0-9][0-9][0-9][0-9]' regex_practice_data.txt | wc -l;
+
+egrep '([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})' regex_practice_data.txt | wc -l;
+
+egrep '([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.gov' regex_practice_data.txt | wc -l;
+

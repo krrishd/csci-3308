@@ -1,0 +1,15 @@
+#! /bin/bash
+
+diff fruitsOld.txt fruitsNew.txt
+
+wc -l testPasswd.txt (15 lines); wc -m testPasswd.txt (692 characters);
+
+cut -d ':' -f 1 testPasswd.txt; cut -d ' ' -f 2,4 grades.txt;
+
+cut -d ':' -f 4 testPasswd.txt | sort -n | uniq |> ~/filename.txt;
+ 
+sed 's/[a-zA-Z]//g' leetSpeak.txt; sed 's/[0-9]//g' leetSpeak.txt; sed 's/[0-9]/_/g';
+
+awk -F ' ' '{print $1 " " $2 " " ($3+$4+$5+$6)/4}' grades.txt;
+
+
