@@ -2,8 +2,17 @@
 
 # Krish Dholakiya and Michael Merola
 
-awk -F ' ' '{
+if [ -z "$1" ];
+then
+    echo "Usage: ./Grades.sh filename"
+    echo "Or"
+    echo "Usage: ./GradesAwk.sh filename"
+else
 
-    print int(($4+$5+$6)/3) " [" $1 "] " $3 ", " $2 | "sort -k3"
+    awk -F ' ' '{
 
-}' $1
+        print int(($4+$5+$6)/3) " [" $1 "] " $3 ", " $2 | "sort -k3"
+
+    }' $1
+
+fi
